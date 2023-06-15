@@ -1,0 +1,19 @@
+<% if(req.user) {%>
+    <a href="/posts/create">Create a post</a>
+<% } %>
+<% posts.forEach(post => { %>
+    <div class="post_group">
+        <p><a href="<%=post.link%>"><%= post.title %></a></p>
+        <p><%=post.description%></p>
+        <p>Posted by <%= post.uname %> to <a href="/subs/show/:<%= post.subgroup %>"><%= post.subgroup %></a></p>
+        <p>
+            <a class="post_sub_link" href="/posts/show/:<%=post.id%>">View comments</a>
+            <% if(req.user) {%>
+                <% if(req.user.id === post.creator) {%>
+                    <a class="post_sub_link" href="/posts/edit/:<%=post.id%>">Edit post</a>
+                    <a class="post_sub_link" href="/posts/deleteConfirm/:<%=post.id%>">Delete post</a>
+                <% } %>
+            <% } %>
+        </p>
+    </div>
+<% }) %>

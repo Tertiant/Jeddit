@@ -1,0 +1,11 @@
+<% if(req.user) {%>
+  <% if(req.user.id === post.creator) {%>
+    <p>Are you sure you want to delete this post?</p>
+    <form action="/posts/delete/:<%=post.id%>" method="post">
+      <button type="submit">Yes</button>
+    </form>
+    <a href="/posts/show/:<%=post.id%>">Wait no</a>
+  <% } else {%>
+    <p>This isn't your post, you can't delete it</p>
+  <% } %>
+<% } %>

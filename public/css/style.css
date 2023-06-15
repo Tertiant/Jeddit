@@ -1,0 +1,149 @@
+*, *:before, *:after {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background-color: rgb(219, 235, 248);
+    padding: 12px 12px;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    border: 1px solid rgba(44, 44, 44, 0);
+    padding: 5px 16px;
+    border-radius: 18px;
+    background-color: rgb(44,44,44);
+    color:white;
+}
+
+button:hover {
+    background-color: rgb(83, 83, 83);
+}
+
+button:active {
+    background-color: rgb(41, 41, 41);
+}
+
+input {
+    border: 1px solid rgb(205, 211, 214);
+    padding: 5px 16px;
+    border-radius: 18px;
+    margin-right: 8px;
+}
+
+#createPostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 50%;
+    min-width: 400px;
+}
+
+#createPostForm button {
+    width: 200px;
+}
+
+.logo_group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_group img {
+    max-height: 32px;
+    margin: 0px;
+}
+
+.logo_group h1 {
+    font-size: 32px;
+    margin: 0px;
+}
+
+.logo_group h1 a {
+    font-size: 32px;
+    font-family: 'Varela Round', sans-serif;
+    margin: 0px 16px;
+    color: rgb(44, 44, 44);
+}
+
+.logo_group a {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px;
+    border-radius: 0px;
+    color: rgb(44, 44, 44);
+}
+
+.logo_group a:hover, a:active, a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(44, 44, 44);
+}
+
+header a {
+    background-color: rgb(44, 44, 44);
+    padding: 6px 32px;
+    border-radius: 20px;
+    color: white;
+}
+
+header a:hover, header a:focus {
+    background-color: rgb(83, 83, 83);
+    text-decoration: none;
+    color: white;
+}
+
+header a:active {
+    background-color: rgb(41, 41, 41);
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+    font-size: 24;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    margin: 8px 0px;
+}
+
+.post_group {
+    padding: 4px 16px;
+    /* background-color: rgb(238, 241, 244); */
+    border: 1px solid rgb(205, 211, 214);
+    margin: 32px 0px;
+    border-radius: 8px;
+}
+
+.post_group p {
+    color:rgb(118, 129, 133);
+}
+
+.post_group p:first-of-type a {
+    font-size: 20px;
+}
+
+.post_group .post_sub_link {
+    /* color:rgb(0, 90, 174); */
+    margin-right: 16px;
+}
+
+.comment_group {
+    padding: 4px 16px;
+    /* background-color: rgb(238, 241, 244); */
+    border: 1px solid rgb(205, 211, 214);
+    margin: 32px 0px;
+    border-radius: 8px;
+    margin-left: 32px;
+}
+
+.comment_group p:last-child {
+    color:rgb(118, 129, 133);
+}

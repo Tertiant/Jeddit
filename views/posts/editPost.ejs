@@ -1,0 +1,13 @@
+<% if(req.user) {%>
+  <% if(req.user.id === post.creator) {%>
+  <form action="/posts/edit/:<%=post.id%>" method="post">
+    <input type="text" name="title" value="<%= post.title%>"/>
+    <input type="text" name="link" value="<%= post.link%>" />
+    <input type="text" name="description" value="<%= post.description%>" />
+    <input type="text" name="subgroup" value="<%= post.subgroup%>" />
+    <button type="submit">Edit Post</button>
+  </form>
+  <% } else {%>
+    <p>This isn't your post, you can't edit it</p>
+  <% } %>
+<% } %>

@@ -1,0 +1,29 @@
+<div class="post_group">
+    <p><a href="<%=post.link%>"><%= post.title %></a></p>
+    <p><%=post.description%></p>
+    <p>Posted by <%= post.uname %> to <a href="/subs/show/:<%= post.subgroup %>"><%= post.subgroup %></a></p>
+    <p>
+        <% if(req.user) {%>
+            <% if(req.user.id === post.creator) {%>
+                <a class="post_sub_link" href="/posts/edit/:<%=post.id%>">Edit post</a>
+                <a class="post_sub_link" href="/posts/deleteConfirm/:<%=post.id%>">Delete post</a>
+            <% } %>
+        <% } %>
+    </p>
+</div>
+
+<% if(req.user) {%>
+    <form action="/posts/comment-create/:<%=post.id%>" method="post">
+        <input type="text" name="description" placeholder="Comment here"/>
+        <button type="submit">Submit Comment</button>
+    </form>
+<% } else {%>
+    <p>Log in to comment on posts</p>
+<% } %>
+
+<% post.comments.forEach(comment => { %>
+<div class="comment_group">
+    <p> <%= comment.description %> </p>
+    <p>Commented by <%= comment.creator %> at <%= comment.timestamp %></p>
+</div>
+<% }) %>
